@@ -69,6 +69,7 @@ public class MemberList extends AppCompatActivity {
                                                 }
                                             }.perform();
                                             Toast.makeText(this__,"삭제실행",Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(this__, MemberList.class));
                                         }
                                     })
                             .setNegativeButton(android.R.string.no

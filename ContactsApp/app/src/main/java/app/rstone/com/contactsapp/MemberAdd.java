@@ -43,11 +43,11 @@ public class MemberAdd extends AppCompatActivity {
         findViewById(R.id.addBtn).setOnClickListener(
                 (View v)->{
                     ItemAdd query = new ItemAdd(this__);
-                    query.m.phone = ((phone.getText()+"").equals(""))? "" : phone.getText()+"";
-                    query.m.email = ((email.getText()+"").equals(""))? "" : email.getText()+"";
-                    query.m.addr = ((addr.getText()+"").equals(""))? "" : addr.getText()+"";
-                    query.m.name = ((name.getText()+"").equals(""))? "" : name.getText()+"";
-                    query.m.photo = (img.getTag().toString().equals(""))? "profile_1" :img.getTag().toString();
+                    query.m.phone = ((phone.getText().toString()).equals(""))? "" : phone.getText()+"";
+                    query.m.email = ((email.getText().toString()).equals(""))? "" : email.getText()+"";
+                    query.m.addr = ((addr.getText().toString()).equals(""))? "" : addr.getText()+"";
+                    query.m.name = ((name.getText().toString()).equals(""))? "" : name.getText()+"";
+                    query.m.photo = (img.getTag() == null)? "profile_1" :img.getTag().toString();
                     new StatusService() {
                         @Override
                         public void perform() {

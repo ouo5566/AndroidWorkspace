@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import app.rstone.com.contactsapp.util.PhoneUtil;
 
 import static app.rstone.com.contactsapp.Main.MEMADDR;
 import static app.rstone.com.contactsapp.Main.MEMEMAIL;
@@ -64,12 +67,17 @@ public class MemberDetail extends AppCompatActivity {
         );
         findViewById(R.id.callBtn).setOnClickListener(
                 (View v) -> {
-
+                    PhoneUtil util = new PhoneUtil(this__, this);
+                    util.setPhoneNum(phone.getText().toString());
+                    util.call();
                 }
         );
         findViewById(R.id.dialBtn).setOnClickListener(
                 (View v) -> {
-
+                    PhoneUtil util = new PhoneUtil(this__, this);
+                    Toast.makeText(this__, "전화번호 : " + phone.getText().toString(), Toast.LENGTH_SHORT).show();
+                    util.setPhoneNum(phone.getText().toString());
+                    util.dial();
                 }
         );
         findViewById(R.id.smsBtn).setOnClickListener(
